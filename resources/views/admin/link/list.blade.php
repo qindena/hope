@@ -166,21 +166,18 @@
                             <img src="{{$v->profile}}" alt="" style='width:80px'>
                         </td>
 
-                        <td class=" ">
+
                            
-                             <td class="ztai">
-                           
+                        <td class="ztai">
                             @if($v->status == 1)
                                 <a  href="#" title="已启用" >已启用</a>
                             @else
                                 <a  href="#" title="已禁用" >已禁用</a>
-                            @endif
-                          
-                            
-                            </td>
+                            @endif   
+                        </td>
 
                             
-                        </td>
+
                         <td class=" ">
                             
                             <a class='btn btn-warning' href="/admin/link/{{$v->id}}/edit">修改</a>
