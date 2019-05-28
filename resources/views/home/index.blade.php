@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 @extends('common.homes')
 
 @section('title', $title)
