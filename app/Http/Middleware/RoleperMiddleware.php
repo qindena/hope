@@ -42,7 +42,7 @@ class RoleperMiddleware
         $urls = \Route::current()->getActionName();
 
 
-        dump($urls);
+        // dump($urls);
         //判断
 
         if(in_array($urls, $psr)){
