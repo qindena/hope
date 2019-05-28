@@ -238,6 +238,38 @@
                         </ul>
                     </li>
                 </ul>
+                 <ul>
+                    <li>
+                        <a href="#"><i class="icon-archive"></i>广告管理</a>
+                        <ul class='closed'>
+                            <li><a href="/admins/poster">浏览广告</a></li>
+                            <li><a href="/admins/poster/create">添加广告</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="icon-shopping-cart"></i>订单管理</a>
+                        <ul class='closed'>
+                            <li><a href="/admins/orders">浏览订单</a></li>
+                            <li><a href="/admins/orders/create">添加订单</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                 <ul>
+                    <li>
+                        <a href="#"><i class="icon-archive"></i>友情管理</a>
+                        <ul class='closed'>
+                            <li><a href="/admin/link">浏览友情</a></li>
+                            <li><a href="/admin/link/create">添加友情</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="icon-shopping-cart"></i>轮播图管理</a>
+                        <ul class='closed'>
+                            <li><a href="/admin/lunbo">浏览轮播图</a></li>
+                            <li><a href="/admin/lunbo/create">添加轮播图</a></li>
+                        </ul>
+                    </li>
+                </ul>
             </div>         
         </div>
         
