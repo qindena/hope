@@ -60,5 +60,6 @@ class Kernel extends HttpKernel
 
         '/admins/login' => \App\Http\Middleware\LoginMiddleware::class,
         'roleper' => \App\Http\Middleware\RoleperMiddleware::class,
+        '/home/login' => \App\Http\Middleware\HomeLoginMiddleware::class,
     ];
 }
