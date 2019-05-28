@@ -188,7 +188,7 @@
         <!-- Sidebar Wrapper -->
         <div id="mws-sidebar">
             <!-- Main Navigation -->
-            <div id="mws-navigation">
+          <div id="mws-navigation">
 
                  <ul>
                     <li>
@@ -214,8 +214,8 @@
                     <li>
                         <a href="#"><i class="icon-key"></i>权限管理</a>
                         <ul class='closed'>
-                            <li><a href="/admins/permission/create">添加权限</a></li>
-                            <li><a href="/admins/permission">浏览权限</a></li>
+                            <li><a href="/admins/user/create">添加权限</a></li>
+                            <li><a href="/admins/user">浏览权限</a></li>
                         </ul>
                     </li>
                    
@@ -237,40 +237,40 @@
                             <li><a href="/admin/goods/create">添加商品</a></li>
                         </ul>
                     </li>
-                </ul>
-                 <ul>
+
                     <li>
-                        <a href="#"><i class="icon-archive"></i>广告管理</a>
-                        <ul class='closed'>
-                            <li><a href="/admins/poster">浏览广告</a></li>
-                            <li><a href="/admins/poster/create">添加广告</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#"><i class="icon-shopping-cart"></i>订单管理</a>
+                        <a href="#"><i class="icon-list"></i>订单管理</a>
                         <ul class='closed'>
                             <li><a href="/admins/orders">浏览订单</a></li>
-                            <li><a href="/admins/orders/create">添加订单</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                 <ul>
-                    <li>
-                        <a href="#"><i class="icon-archive"></i>友情管理</a>
-                        <ul class='closed'>
-                            <li><a href="/admin/link">浏览友情</a></li>
-                            <li><a href="/admin/link/create">添加友情</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="#"><i class="icon-shopping-cart"></i>轮播图管理</a>
+                        <a href="#"><i class="icon-list"></i>广告管理</a>
                         <ul class='closed'>
-                            <li><a href="/admin/lunbo">浏览轮播图</a></li>
+                            <li><a href="/admins/poster/create">添加广告</a></li>
+                            <li><a href="/admins/poster">浏览广告</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="#"><i class="icon-list"></i>友情链接</a>
+                        <ul class='closed'>
+                            <li><a href="/admin/link/create">添加链接</a></li>
+                            
+                            <li><a href="/admin/link">浏览链接</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="icon-list"></i>轮播图</a>
+                        <ul class='closed'>
                             <li><a href="/admin/lunbo/create">添加轮播图</a></li>
+                            
+                            <li><a href="/admin/lunbo">浏览轮播图</a></li>
                         </ul>
-                    </li>
+                    </li> 
                 </ul>
             </div>         
+        </div>
         </div>
         
         <!-- Main Container Start -->
