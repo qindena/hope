@@ -167,6 +167,11 @@
                         </td>
 
 
+<<<<<<< Updated upstream
+=======
+                           
+                             <td class="ztai">
+>>>>>>> Stashed changes
                            
                         <td class="ztai">
                             @if($v->status == 1)
@@ -176,8 +181,11 @@
                             @endif   
                         </td>
 
+<<<<<<< Updated upstream
                             
 
+=======
+>>>>>>> Stashed changes
                         <td class=" ">
                             
                             <a class='btn btn-warning' href="/admin/link/{{$v->id}}/edit">修改</a>
