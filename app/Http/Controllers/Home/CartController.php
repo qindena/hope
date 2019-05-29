@@ -13,20 +13,14 @@ class CartController extends Controller
     //
     public function cartinfo(Request $request,$id)
     {	
-        session_start();
-        $cat = [];
-        $_SESSION['cat'] = $cat;
-        $_SESSION['cat'][] = $id;
-
-        dump($_SESSION);
-        redirect("/");
+        
 
 
 
-    	/*return view('home.cart.cartinfo',[
+    	return view('home.cart.cartinfo',[
     		'title'=>'购物车详情',
     		'rs'=>$rs,
-    	]);*/
+    	]);
     }
      public function remcart(Request $request)
     {
