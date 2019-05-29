@@ -97,7 +97,7 @@ class PosterController extends Controller
         $data = Poster::create($rs);
 
         if($data){
-            return redirect('admins/poster');
+            return redirect('admins/poster')->with('success','添加成功');
         } else {
             return back();
         }
@@ -237,9 +237,11 @@ class PosterController extends Controller
     {
         //删除头像
         $res = Poster::find($id);
-        $data = @unlink('.'.$res->url);
-        if(!$data){
-            return back()->with('error','修改失败');
+        if(file_exists('.'.$res->url)){
+            $data = @unlink('.'.$res->url);
+            if(!$data){
+                return back()->with('error','修改失败');
+            }
         }
 
         //根据id删除数据

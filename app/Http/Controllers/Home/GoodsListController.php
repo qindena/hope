@@ -26,9 +26,29 @@ class GoodsListController extends Controller
      */
     public function create()
     {
+        $id = session('uid');
+        $rs = DB::table('orders')->where('uid',$id)->first();
+       dump($rs);
+        if(!$rs){
+            return view('home/goods/city', ['uid' => $id]);
+        } else {
+            return view('home/goods/dindan',['rs'=>$rs]);
+        }   
         //
+        
     }
 
+
+    public function citystore(Request $request)
+    {
+        $arr = $request->except('_token');
+        $arr['email'] = '';
+        $arr['header'] = 'default.jpg';
+        $arr['integral'] = 0;
+        
+        // $rs = DB::table('message')->insertGetId($arr);
+
+    }
     /**
      * Store a newly created resource in storage.
      *
