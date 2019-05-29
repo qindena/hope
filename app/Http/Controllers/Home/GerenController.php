@@ -26,6 +26,7 @@ class GerenController extends Controller
     	
     }
 
+    //添加个人详情
     public function lnfo(Request $request)
     {
     	// 表单验证
@@ -74,6 +75,7 @@ class GerenController extends Controller
         }
     }
 
+    //跳的修改页
     public function xglnfo(Request $request)
     {
     	$uid = session('uid');
@@ -84,6 +86,7 @@ class GerenController extends Controller
     	return view('home.usersgeren.xglnfo',['res'=>$res,'user'=>$user]);
     }
 
+    //修改
     public function xgfo(Request $request, $id)
     {
     	//删除头像
