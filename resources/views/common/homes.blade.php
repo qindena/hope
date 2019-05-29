@@ -18,6 +18,7 @@
 
     <!-- 引入当前页面的CSS文件 -->
     <link rel="stylesheet" href="/home/css/index.css">
+    <link rel="stylesheet" type="text/css" href="/home/css/bootstrap.css" >
     <script src="/js/jquery-3.2.1.min.js"></script>
      <style type="text/css">
         .user-auction .user{
@@ -65,7 +66,7 @@
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="#">
         <!-- 顶部导航 start -->
         <div class="header_bar">
             <div class="header con_width">
@@ -124,7 +125,7 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a rel="nofollow" href="" target="_blank">
+                                            <a rel="nofollow" href="/home/collect" target="_blank">
                                                 我的喜欢
                                             </a>
                                         </li>
