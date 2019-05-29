@@ -158,10 +158,13 @@
             <div class="nav">
                 <ul>
                     @php
+                        use App\Http\Controllers\Admin\TypeController;
+                        use App\Model\Admin\Type;
+                        use App\Model\Admin\Goods;
+                        use App\Model\Admin\Goodspicture;
                         $type = new TypeController();
                         // 导航栏的分类
                         $rs = $type->getfenleiMessage(15);
-                        dump($rs);
                         $goods = new Goods();
                         $goodspicture = new Goodspicture();
                         //取出条目
