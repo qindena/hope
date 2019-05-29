@@ -20,7 +20,6 @@ class IndexController extends Controller
     	$type = new TypeController();
     	// 导航栏的分类
     	$rs = $type->getfenleiMessage(15);
-        dump($rs);
     	$goods = new Goods();
     	$goodspicture = new Goodspicture();
     	$link = new Link();
