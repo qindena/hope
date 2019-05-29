@@ -66,7 +66,7 @@
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="#">
         <!-- 顶部导航 start -->
         <div class="header_bar">
             <div class="header con_width">
