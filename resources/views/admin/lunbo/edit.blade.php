@@ -25,10 +25,10 @@
         			<div class="mws-form-row">
         				<label class="mws-form-label">图片链接地址</label>
         				<div class="mws-form-item" style='width:200px'>
-        					
+                            
                             <img src="{{$rs->url}}" alt="" style='width:120px'>
                             <input type="file" name='url' style="position: absolute; top: 0px; right: 0px; margin: 0px; cursor: pointer; font-size: 999px; opacity: 0; z-index: 999;">
-        				</div>
+                        </div>
         			</div>
         			
         			<div class="mws-form-row">
