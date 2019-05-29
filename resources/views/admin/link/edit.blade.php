@@ -41,9 +41,9 @@
 
         			<div class="mws-form-row">
                     	<label class="mws-form-label">头像</label>
-                    	<div class="mws-form-item">
+                    	<div class="mws-form-item" >
                             <img src="{{$rs->profile}}" alt="" style='width:120px'>
-                        	<input type="file" name='profile' style="position: absolute; top: 0px; right: 0px; margin: 0px; cursor: pointer; font-size: 999px; opacity: 0; z-index: 999;">
+                            <input type="file" name='profile' style="position: absolute; top: 0px; right: 0px; margin: 0px; cursor: pointer; font-size: 999px; opacity: 0; z-index: 999;">
                         </div>
                     </div>
         			
