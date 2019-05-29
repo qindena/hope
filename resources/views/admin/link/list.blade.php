@@ -166,7 +166,7 @@
                             <img src="{{$v->profile}}" alt="" style='width:80px'>
                         </td>
 
-                        <td class=" ">
+                        
                            
                              <td class="ztai">
                            
@@ -180,7 +180,7 @@
                             </td>
 
                             
-                        </td>
+                       
                         <td class=" ">
                             
                             <a class='btn btn-warning' href="/admin/link/{{$v->id}}/edit">修改</a>

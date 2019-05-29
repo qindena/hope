@@ -30,7 +30,7 @@
 			<td>
 			<input type="checkbox" class="check" gid='{{$v->id}}'/>
 			</td>
-          @php
+         	 @php
 					$res = DB::table('goodspicture')->where('gid',$v->id)->get();
 			@endphp
           <td><img src="{{$res[0]->gpic}}" style="width:80px"></td>

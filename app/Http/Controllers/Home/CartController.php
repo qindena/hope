@@ -6,17 +6,27 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\Admin\Goods;
 use DB;
+use Session;
+
 class CartController extends Controller
 {
     //
-    public function cartinfo()
+    public function cartinfo(Request $request,$id)
     {	
-    	$rs = Goods::with('gm')->get();
-    	// dd($rs);
-    	return view('home.cart.cartinfo',[
+        session_start();
+        $cat = [];
+        $_SESSION['cat'] = $cat;
+        $_SESSION['cat'][] = $id;
+
+        dump($_SESSION);
+        redirect("/");
+
+
+
+    	/*return view('home.cart.cartinfo',[
     		'title'=>'购物车详情',
     		'rs'=>$rs,
-    	]);
+    	]);*/
     }
      public function remcart(Request $request)
     {
