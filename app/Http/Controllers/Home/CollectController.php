@@ -29,7 +29,9 @@ class CollectController extends Controller
     	$leftrs = $type->getfenleiMessage(26);
     	
     	$co = DB::table('collect')->get();
-    	dd(empty($co));
+    	if($co){
+    		var_dump($co['0']['id']);exit; 
+    	}
     	return view('home.usersgeren.collect', [
     			'rs'=>$rs,
     			'goods'=>$goods,

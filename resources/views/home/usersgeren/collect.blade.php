@@ -189,7 +189,7 @@
                                         喜欢的商品
                                     </h1>
                                 </div>
-                                @if ($co)
+                                @if (!$co[0]->id == '')
                                 <div class="box-bd">
                                     <div class="xm-goods-list-wrap">
                                         <ul class="xm-goods-list clearfix">
