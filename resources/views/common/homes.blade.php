@@ -18,6 +18,51 @@
 
     <!-- 引入当前页面的CSS文件 -->
     <link rel="stylesheet" href="/home/css/index.css">
+    <script src="/js/jquery-3.2.1.min.js"></script>
+     <style type="text/css">
+        .user-auction .user{
+            position: relative;
+            width: 110px;
+            padding: 0;
+            white-space: nowrap;
+        }
+
+
+        .user-auction .user .user-name{
+            position: relative;
+            z-index: 5;
+            display: block;
+            width: 120px;
+            height: 40px;
+            text-align: center;
+            color: white;
+            color: #b0b0b0;
+            line-height: 40px;"
+        }
+        .user-auction .user .user-menu{
+            display: none;
+            position: absolute;
+            z-index: 3;
+            width: 120px;
+            margin: 0;
+            padding: 7px 0;
+            list-style-type: none;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+        }
+
+
+        .user-auction .user .user-menu li{
+            text-align:center;
+        }
+
+
+        .user-auction .user .user-menu li a{
+            color: #b0b0b0;
+            line-height: 40px;
+            display: inline-block;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -52,13 +97,55 @@
                         </div>
                     </div>
                 </div>
-                <!--右侧登录、注册-->
+                 <!--右侧登录、注册-->
+                @php
+                    $uid = session('uid');
+                    $res = DB::table('users')->where('id',$uid)->first();
+                @endphp
                 <div class="user-auction">
-                    <ul>
-                        <li><a href="#">登录</a></li>
-                        <li><a href="#">注册</a></li>
-                        <li><a href="#">消息通知</a></li>
-                    </ul>
+                    @if(session('uid'))
+                        <ul>
+                            <li>
+                                <span class="user" id="userspan">
+                                    <a rel="nofollow" class="user-name" href="/home/geren" target="_blank">
+                                        <span class="name">
+                                            {{$res->username}}
+                                        </span>
+                                    </a>
+                                    <ul class="user-menu">
+                                        <li>
+                                            <a rel="nofollow" href="/home/geren" target="_blank">
+                                                个人中心
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a rel="nofollow" href="" target="_blank">
+                                                评价晒单
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a rel="nofollow" href="" target="_blank">
+                                                我的喜欢
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a rel="nofollow" href="/home/logout">
+                                                退出登录
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </span>
+                            </li>
+                            <li><a href="#">消息通知</a></li>
+                            <li><a href="#">我的订单</a></li>
+                        </ul>
+                    @else
+                        <ul>
+                            <li><a href="/home/login">登录</a></li>
+                            <li><a href="/home/regist">注册</a></li>
+                            <li><a href="#">消息通知</a></li>
+                        </ul>
+                    @endif
                 </div>
             </div>
         </div>
@@ -245,6 +332,7 @@
                                 <li><a href="#">问题反馈</a></li>
                                 <li><a href="#">廉正举报</a></li>
                                 <li><a href="#">Select Region</a></li>
+                                <li><a href="/home/link" style="color:red">友情链接</a></li>
                             </ul>
                         </div>
                         <p class="desc_con_txt">
@@ -273,7 +361,33 @@
     <script type="text/javascript" charset="utf-8" src="/home/js/index.js"></script>
 </body>
 </html>
+<script type="text/javascript">
+    $('#userspan').mouseover(function(){
+        $('.user-menu').css('display','block');
+        $('.user-name').css('background-color','white');
+        $('.user-name').css('color','#ff6700');
 
+
+        $('.user-menu li').mouseover(function(){
+            $(this).css('background-color','#f5f5f5');
+            $(this).css('color','#ff6700');
+        });
+
+
+        $('.user-menu li a').mouseover(function(){
+            $(this).css('color','#ff6700');
+        });
+    });
+
+
+    $('#userspan').mouseout(function(){
+        $('.user-menu').css('display','none');
+        $('.user-name').css('background-color','');
+        $('.user-name').css('color','#b0b0b0');
+        $('.user-menu li').css('background-color','');
+        $('.user-menu li a').css('color','');
+    });
+</script>
 @section('js')
 
 @show 
