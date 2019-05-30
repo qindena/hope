@@ -24,6 +24,7 @@ class IndexController extends Controller
     	$goodspicture = new Goodspicture();
     	$link = new Link();
     	$lunbo = new Lunbo();
+        $poster = new Poster();
     	
     	//左侧导航栏
     	$leftrs = $type->getfenleiMessage(26);
@@ -35,7 +36,8 @@ class IndexController extends Controller
     			'leftrs'=>$leftrs,
     			'type'=>$type,
     			'link'=>$link,
-    			'lunbo'=>$lunbo
+    			'lunbo'=>$lunbo,
+                'poster'=>$poster
     		]);
     }
 
