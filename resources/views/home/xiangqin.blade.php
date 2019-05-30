@@ -41,7 +41,7 @@
         </ul>
         <div class="clear"></div>
         <p class="chima">尺码：</p>
-        <p class="buy"><a href="#" id="firstbuy">立即购买</a><a href="/home/carts/{{$gsrs->id}}">加入购物车</a></p>
+        <p class="buy"><a href="#" id="firstbuy">立即购买</a><a href="/home/cart/{{$gsrs->id}}">加入购物车</a></p>
    		<div class="clear"></div>
         <div class="fenx"><a href="#"><img src="/details/images/shopdetail/tell07.png"></a></div>
         <p class="fuwu">服务承诺：</p>
