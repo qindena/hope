@@ -32,7 +32,7 @@
 
         <tr>
 			<td>
-			<input type="checkbox" class="check" gid='{{$v->id}}'/>
+			<input type="checkbox" class="check" gid='{{$v->id}}' name="id[]" value="{{$v->id}}" />
 			</td>
          	 @php
 					$res = $goodspicture->select('gpic')->where('gid',$v->id)->first();
@@ -42,12 +42,12 @@
           <td class="prc">{{$v->price}}</td>
           <th>
           	<div class="quantity clearfix">
-							<input type="button" value="-" class="minus">
-							<input type="text" name="num" value="1" class="qty" style="width:25px;text-align:center;" />
-							<input type="button" value="+" class="plus">
+				<input type="button" value="-" class="minus">
+				<input type="text" name="num[]" value="1" class="qty" style="width:25px;text-align:center;" />
+				<input type="button" value="+" class="plus">
 			</div>
 		</th>
-          <td>¥<span class="amount">{{$v->price}}</span></td>
+          <td>¥<span class="amount">{{$v->price}}元</span></td>
           <td>
 			<span class="remove btn btn-danger">删除</span>
           </td>
@@ -98,8 +98,6 @@
 
 @section('js')
 <script>
-	var catbody = $('.catbody')[0];
-	console.log(catbody);
 	//全选
 	$('.as').click(function(){
 		//$('.check').attr('checked',true)
@@ -232,7 +230,7 @@
 			
 		})
 		//让总计发生改变
-		$('#total').text(totals);
+		$('#total').text(totals+'元');
 	}
 </script>
 @stop
