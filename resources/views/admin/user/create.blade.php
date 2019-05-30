@@ -28,17 +28,6 @@
         					<input type="text" name='username' class="small" placeholder="请输入用户名">
         				</div>
         			</div>
-
-                    <div class="mws-form-row">
-                        <label class="mws-form-label">旧密码</label>
-                        <div class="mws-form-item">
-                                <span>
-                                  <input name='oldpass'   type="password" class="small mima_dd " placeholder="请输入旧密码" >
-                                  <input name='oldpass'  type="text" class="small mima_wz" style="display:none;" placeholder="请输入旧密码" >
-                                  <a class="eyes_box " data-show="1" href="javascript:void(0);"><i style="margin-left:10px" class="icon-eye-open"></i></a> </span>
-                        </div>
-
-                    </div>
                        <div class="mws-form-row">
                         <label class="mws-form-label">请输入新密码</label>
                         <div class="mws-form-item">

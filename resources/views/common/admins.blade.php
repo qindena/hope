@@ -88,11 +88,11 @@
                 <!-- Username and Functions -->
                 <div id="mws-user-functions">
                     <div id="mws-username">
-                        @if($res)
-                        {{$res->username}}
-
+                        @if(empty($res))
+                       XXXX欢迎您  
                         @else
-                        XXXX欢迎您
+                       {{$res->username}}
+
 
                         @endif
                         
@@ -143,8 +143,8 @@
                     <li>
                         <a href="#"><i class="icon-key"></i>权限管理</a>
                         <ul class='closed'>
-                            <li><a href="/admins/user/create">添加权限</a></li>
-                            <li><a href="/admins/user">浏览权限</a></li>
+                            <li><a href="/admins/permission/create">添加权限</a></li>
+                            <li><a href="/admins/permission">浏览权限</a></li>
                         </ul>
                     </li>
                    
