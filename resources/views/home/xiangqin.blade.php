@@ -28,6 +28,7 @@
 	</div>
 
     <div class="centerbox">
+        <input type="hidden" id="gsid"  value="{{$gsrs->id}}">
     	<p class="imgname">{{$gsrs->gname}}</p>
     	<p class="Aprice">价格：<samp>￥{{$gsrs->price}}.00</samp></p>
     	<p class="price">促销价：<samp>￥49.00</samp></p>
@@ -41,7 +42,7 @@
         </ul>
         <div class="clear"></div>
         <p class="chima">尺码：</p>
-        <p class="buy"><a href="#" id="firstbuy">立即购买</a><a href="/home/cart/{{$gsrs->id}}">加入购物车</a></p>
+        <p class="buy"><a href="#" id="firstbuy">立即购买</a><a href="javascript:void(0);" class="cart">加入购物车</a></p>
    		<div class="clear"></div>
         <div class="fenx"><a href="#"><img src="/details/images/shopdetail/tell07.png"></a></div>
         <p class="fuwu">服务承诺：</p>
@@ -211,6 +212,7 @@
 
 @section('js')
 <script src="/details/js/jquery-1.9.1.min.js"></script>
+<script src="/js/jquery-3.2.1.min.js"></script>
 <script src="/details/js/common.js"></script>
 <script type="text/javascript">
   $(document).ready(function(){
@@ -255,6 +257,15 @@
 			$(this).addClass("now")
 			
 			});			
+});
+
+$('.cart').click(function(){
+    // alert(1);
+    var id = $('#gsid').attr('value');
+    console.log(id);
+    $.post('/home/cartajax', {'_token':"{{csrf_token()}}",id:id}, function(data){
+        console.log(data);
+    });
 });
 </script>
 @stop

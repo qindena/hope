@@ -73,11 +73,7 @@
 				@show
 			</div>
 		</div>
-<div id="love">
-			<div class="love_one">
-				<h2>为你推荐</h2>
-			</div>
-</div>		
+		
  <!-- 底部 start -->
         <div class="footer">
             <!--服务 start-->
