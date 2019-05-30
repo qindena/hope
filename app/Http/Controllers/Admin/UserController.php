@@ -66,7 +66,7 @@ class UserController extends Controller
 
         //根据用户的id把user_role里面的相关信息 进行删除
         //就是删除之前的角色
-        // DB::table('user_role')->where('userid',$uid)->delete();
+        DB::table('user_role')->where('userid',$uid)->delete();
 
         //获取角色的id
         $rid = $request->roleid;
@@ -187,7 +187,7 @@ class UserController extends Controller
         $rs = $request->except('_token','repass','profile');
 
 
-        dump($rs);die;
+
         $rs['addtime'] = time();
         //密码的加密
         $rs['password'] = Hash::make($request->password);

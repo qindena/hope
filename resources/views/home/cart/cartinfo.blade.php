@@ -24,16 +24,16 @@
           <th>操作</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody class="catbody">
       	@foreach($rs as $k=>$v)
         <tr>
 			<td>
 			<input type="checkbox" class="check" gid='{{$v->id}}'/>
 			</td>
          	 @php
-					$res = DB::table('goodspicture')->where('gid',$v->id)->get();
+					$res = $goodspicture->select('gpic')->where('gid',$v->id)->first();
 			@endphp
-          <td><img src="{{$res[0]->gpic}}" style="width:80px"></td>
+          <td><img src="{{$res->gpic}}" style="width:80px"></td>
           <td>{{$v->gname}}</td>
           <td class="prc">{{$v->price}}</td>
           <th>
@@ -73,7 +73,7 @@
 			</div>			
 		</div>
 @else
- 	<div id="cart">
+ 	<div id="cart" >
 			<div class="cart1">
 				<h2>你的购物车是空的!</h2>
 				<a href="/">
@@ -88,7 +88,8 @@
 
 @section('js')
 <script>
-
+	var catbody = $('.catbody')[0];
+	console.log(catbody);
 	//全选
 	$('.as').click(function(){
 		//$('.check').attr('checked',true)
@@ -173,14 +174,13 @@
 
 		//获取当前商品的id
 		var gid = $(this).parents('tr').find('.check').attr('gid');
-
 		var rems = $(this);
 
 		// 发送ajax
 		$.post('/home/remcart',{'_token':"{{csrf_token()}}",gid:gid},function(data){
 
 			// console.log(data);
-			if (data.code == 1) {
+			if (data == 1) {
 
 				// alert(data.success);
 
@@ -190,8 +190,6 @@
 
 				var gids = $('.check').attr('gid');
 
-			} else {
-				alert(data.error);
 			}
 		})
 
@@ -199,8 +197,13 @@
 //清空购物车
 		$('.qk').click(function(){
 			var tishi = confirm('你确定清空购物车吗');
+			var catbody = $('.catbody')[0];
 			if(!tishi) return;
-		
+			$.post('/home/qk', {'_token':"{{csrf_token()}}", id:1}, function(data){
+				if(data == 1){
+					catbody.remove();
+				}
+			});
 		})
 
 

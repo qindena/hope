@@ -2,6 +2,7 @@
 @section('title','友情链接')
 
 @section('home')
+<link rel="stylesheet" type="text/css" href="/home/css/bootstrap.css" >
 <div class="content left" style="width:100%;min-height: 455px;">
 <div class="subtitle-new">友情链接</div>
 <div class="li-box">
