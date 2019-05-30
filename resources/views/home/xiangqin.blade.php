@@ -6,7 +6,7 @@
 	@php
 		$gsrs = $goods->find($gsid);
 		$gspics = $goodspicture->where('gid', $gsid)->select('gpic')->get();
-		$posrs = $poster->orderBy('id', 'desc')->take(3)->get();
+		$posrs = $poster->where('type',3)->orderBy('id', 'desc')->take(3)->get();
 		$recomrs = $goods->where('tid', $recommend->id)->take(4)->get();
 	@endphp
 <link href="/details/style/shopdetail.css" rel="stylesheet" type="text/css">
