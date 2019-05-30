@@ -2,6 +2,7 @@
 @section('title','审核友情链接')
 
 @section('home')
+<link rel="stylesheet" type="text/css" href="/home/css/bootstrap.css" >
 <div class="container">
 <div class="bs-example" data-example-id="striped-table">
     <table class="table table-striped">

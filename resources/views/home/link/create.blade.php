@@ -2,6 +2,7 @@
 @section('title','添加友情链接')
 
 @section('home')
+<link rel="stylesheet" type="text/css" href="/home/css/bootstrap.css" >
 <hr>	
 <div class="container" style="margin-top:35px;margin-bottom:40px">
 <form style="width:400px" action="/home/store" method='post' enctype='multipart/form-data'>

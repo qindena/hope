@@ -18,7 +18,6 @@
 
     <!-- 引入当前页面的CSS文件 -->
     <link rel="stylesheet" href="/home/css/index.css">
-    <link rel="stylesheet" type="text/css" href="/home/css/bootstrap.css" >
     <script src="/js/jquery-3.2.1.min.js"></script>
      <style type="text/css">
         .user-auction .user{
@@ -87,7 +86,7 @@
                 <!-- 右侧购物车 -->
                 <div class="header_shopcart">
                     <div class="shopcart_logo">
-                        <a href="#">
+                        <a href="/home/cart">
                             <i class="iconfont icon-cart"></i>
                             购物车（0）  
                         </a>
