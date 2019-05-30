@@ -75,7 +75,12 @@
             </div>
         </div>
         <!-- 定义分类菜单和banner图 end -->
-
+        @php
+            $j = 0;
+            $posrs = $poster->where('type',0)->select('url')->orderBy('id','asc')->get();
+            $poas = 0;
+            $posarr = $poster->where('type',1)->select('url')->orderBy('id','asc')->get();
+        @endphp
         <!-- 定义推荐部分 start -->
         <div class="recommend con_width">
             <div class="recommend_left">
@@ -95,9 +100,9 @@
             </div>
             <div class="recommend_right">
                 <ul>
-                    <li><a href=""><img src="./home/images/img1.jpg" title="" alt=""/></a></li>
-                    <li><a href=""><img src="./home/images/img2.jpg" title="" alt=""/></a></li>
-                    <li><a href=""><img src="./home/images/img3.jpeg" title="" alt=""/></a></li>
+                    <li><a href=""><img src="{{$posrs[$j++]->url}}" title="" alt=""/></a></li>
+                    <li><a href=""><img src="{{$posrs[$j++]->url}}" title="" alt=""/></a></li>
+                    <li><a href=""><img src="{{$posrs[$j++]->url}}" title="" alt=""/></a></li>
                 </ul>
             </div>
         </div>
@@ -143,7 +148,7 @@
         
         <!-- 广告 start -->
         <div class="ad_container con_width">
-            <a href="#" alt="小米8 6G+128G" title="小米8 6G+128G"><img src="./home/images/xmad_15326189127178_tugca.jpg"></a>
+            <a href="#" alt="小米8 6G+128G" title="小米8 6G+128G"><img src="{{$posrs[$j++]->url}}"></a>
         </div>
         <!-- 广告 end -->
         
@@ -167,7 +172,7 @@
                 @endphp
                 <h1 class="list_title">{{$cgarr[$i++]['tname']}}<a href="">查看更多<i class="iconfont icon-xiangyoujiantou"></i></a></h1>
                 <div class="goods_item_left1">
-                    <a href="#"><img src="./home/images/xmad_15323220713837_GLBVX.jpg"/></a>
+                    <a href="#"><img src="{{$posarr[$poas++]->url}}"/></a>
                 </div>
                 @foreach($congoods as $ck=>$cv)
                 @php
@@ -192,7 +197,7 @@
         
             <!-- 广告 start -->
             <div class="ad_container con_width">
-                <a href="#" alt="小米电视" title="小米电视"><img src="./home/images/xmad_15329210161578_SWgUX.jpg"></a>
+                <a href="#" alt="小米电视" title="小米电视"><img src="{{$posrs[$j++]->url}}"></a>
             </div>
             <!-- 广告 end -->
 
@@ -207,8 +212,8 @@
                     </ul>
                 </h1>
                 <div class="wiring_left">
-                    <a href="#"><img src="./home/images/xmad_15232550390498_qwxEC.jpg"/></a>
-                    <a href="#"><img src="./home/images/xmad_15232550390498_qwxEC.jpg"/></a>
+                    <a href="#"><img src="{{$posarr[$poas++]->url}}"/></a>
+                    <a href="#"><img src="{{$posarr[$poas++]->url}}"/></a>
                 </div>
                 <div class="wiring_right" id="houseElectricalDiv">
                     <!-- 热门 -->
@@ -263,7 +268,7 @@
 
             <!-- 广告 start -->
             <div class="ad_container con_width">
-                <a href="#" alt="小米电视" title="小米电视"><img src="./home/images/xmad_15330597618059_zrRgh.jpg"></a>
+                <a href="#" alt="小米电视" title="小米电视"><img src="{{$posrs[$j++]->url}}"></a>
             </div>
             <!-- 广告 end -->
 
@@ -282,8 +287,8 @@
                     </ul>
                 </h1>
                 <div class="wiring_left">
-                    <a href="#"><img src="./home/images/xmad_15266395374048_JnZQo.jpg"/></a>
-                    <a href="#"><img src="./home/images/xmad_15266395374048_JnZQo.jpg"/></a>
+                    <a href="#"><img src="{{$posarr[$poas++]->url}}"/></a>
+                    <a href="#"><img src="{{$posarr[$poas++]->url}}"/></a>
                 </div>
                 <div class="wiring_right">
                     @foreach($congoods as $ck=>$cv)
@@ -335,7 +340,7 @@
 
             <!-- 广告 start -->
             <div class="ad_container con_width">
-                <a href="#" alt="小米电视" title="小米电视"><img src="./home/images/xmad_15330597618059_zrRgh.jpg"></a>
+                <a href="#" alt="小米电视" title="小米电视"><img src="{{$posrs[$j++]->url}}"></a>
             </div>
             <!-- 广告 end -->
 
