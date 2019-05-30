@@ -153,10 +153,11 @@ class GoodsController extends Controller
 
                 array_push($aimg, $garr);
             }
+            $res = DB::table('goodspicture')->insert($aimg);
+        }else{
+            $res = 1;
         }
-        // dd($aimg);
-        $res = DB::table('goodspicture')->insert($aimg);
-        if($res){
+        if($res || $data){
             return redirect('/admin/goods')->with('success','修改成功');
         } else {
             unlink('.'.$rs['gpic']);
@@ -188,7 +189,7 @@ class GoodsController extends Controller
         $id = $request->id;
         // dump($id);
         $rs = Goodspicture::find($id);
-        $data = unlink('.'.($rs->gpic));
+        $data = @unlink('.'.$rs->gpic);
         if(!$data){
             echo '删除图片路径失败';
         }

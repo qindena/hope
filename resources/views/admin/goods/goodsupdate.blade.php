@@ -118,12 +118,9 @@
         var gimgid = $(this).attr('gimgid');
         // console.log(gid); 
         var gms = $(this)[0];
-        // console.log(gms);die;
-        $.get('/admin/goods/ajaxdelete',{id:gimgid}, function(){
-            if(data == 1){
-
-                gms.remove();
-            }
+        console.log(gms);
+        $.get('/admin/goods/ajaxdelete',{id:gimgid}, function(data){
+            gms.remove();
         });
     });
     //实例化编辑器
