@@ -8,9 +8,12 @@
 
 	
 </style>
+<div id="cart">
 <div class="container">
+<form action="/home/jiesuan" method="post" enctype="multipart/form-data">
 <table class="table table-hover">
 <div class="bs-example" data-example-id="hoverable-table">
+
     <table class="table table-hover">
 @if ($rs)
       <thead>
@@ -26,6 +29,7 @@
       </thead>
       <tbody class="catbody">
       	@foreach($rs as $k=>$v)
+
         <tr>
 			<td>
 			<input type="checkbox" class="check" gid='{{$v->id}}'/>
@@ -39,7 +43,7 @@
           <th>
           	<div class="quantity clearfix">
 							<input type="button" value="-" class="minus">
-							<input type="text" name="quantity" value="1" class="qty" style="width:25px;text-align:center;" />
+							<input type="text" name="num" value="1" class="qty" style="width:25px;text-align:center;" />
 							<input type="button" value="+" class="plus">
 			</div>
 		</th>
@@ -51,11 +55,14 @@
       @endforeach
       </tbody>
     </table>
+    {{csrf_field()}}
+    
   </div>
 </table>
+
 </div>
 
-<div class="jiesuandan mt20 center" >
+		<div class="jiesuandan mt20 center" >
 				<div class="tishi fl ml20">
 					<ul>
 						<li><a href="/">继续购物</a></li>
@@ -71,9 +78,11 @@
 				</div>
 				<div class="clear" ></div>
 			</div>			
-		</div>
+</div>
+
+</form>
 @else
- 	<div id="cart" >
+<div class="cartclear" >
 			<div class="cart1">
 				<h2>你的购物车是空的!</h2>
 				<a href="/">
@@ -82,7 +91,7 @@
 					</div>
 				</a>
 			</div>
-		</div>
+</div>
 @endif
 @stop
 
@@ -189,8 +198,12 @@
 				getTotals();
 
 				var gids = $('.check').attr('gid');
-
+				if(gids == undefined){
+					
+					location.reload();
+				}
 			}
+
 		})
 
 	})

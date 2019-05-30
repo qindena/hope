@@ -76,7 +76,14 @@ class CartController extends Controller
     // 清空购物车ajax
     public function qk(Request $request)
     {
+        //移除session
         Session::forget('cart');
-        echo 1;
+        //echo 1;
     }
+
+
+
+   
+
+
 }
