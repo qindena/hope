@@ -10,10 +10,10 @@
 </style>
 <div id="cart">
 <div class="container">
-<form action="/home/jiesuan" method="post" enctype="multipart/form-data">
+
 <table class="table table-hover">
 <div class="bs-example" data-example-id="hoverable-table">
-
+<form action="/home/jiesuan" method="post" enctype="multipart/form-data">
     <table class="table table-hover">
 @if ($rs)
       <thead>
@@ -49,7 +49,7 @@
 		</th>
           <td>¥<span class="amount">{{$v->price}}</span></td>
           <td>
-			<button class="remove btn btn-danger">删除</button>
+			<span class="remove btn btn-danger">删除</span>
           </td>
         </tr>
       @endforeach
@@ -93,6 +93,7 @@
 			</div>
 </div>
 @endif
+
 @stop
 
 @section('js')
@@ -198,10 +199,7 @@
 				getTotals();
 
 				var gids = $('.check').attr('gid');
-				if(gids == undefined){
-					
-					location.reload();
-				}
+				
 			}
 
 		})

@@ -78,7 +78,7 @@ class CartController extends Controller
     {
         //移除session
         Session::forget('cart');
-        //echo 1;
+        echo 1;
     }
 
 
