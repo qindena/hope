@@ -200,4 +200,10 @@ class RegistController extends Controller
         //重定向
         return redirect('/');
     }
+
+    public function ss()
+    {
+    	//重定向
+        return view('home.404');
+    }
 }

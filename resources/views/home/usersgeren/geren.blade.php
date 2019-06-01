@@ -43,24 +43,24 @@
                                         </li>
                                         <!-- <li><a href="//service.order.mi.com/insurance/payServiceList?_r=26153.1557822362">意外保</a></li>
                                         -->
-                                        <li>
-                                            <a href="//static.mi.com/order/#type=11">
+                                       <li>
+                                            <a href="/home/ss">
                                                 团购订单
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="https://order.mi.com/user/comment?filter=1&r=26153.1557822362"
+                                            <a href="/home/ss"
                                             data-count="comment" data-count-style="bracket">
                                                 评价晒单
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="//recharge.10046.mi.com/list">
+                                            <a href="/home/ss">
                                                 话费充值订单
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="//huanxin.mi.com/order/list?r=26153.1557822362">
+                                            <a href="/home/ss">
                                                 以旧换新订单
                                             </a>
                                         </li>
@@ -75,79 +75,53 @@
                                 </div>
                                 <div class="box-bd">
                                     <ul class="uc-nav-list">
-                                        <li class="active">
+                                        <li  class="active">
                                             <a href="/home/geren">
                                                 我的个人中心
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="https://order.mi.com/message/list?r=26153.1557822362">
+                                            <a href="/home/ss">
                                                 消息通知
                                                 <i class="J_miMessageTotal">
                                                 </i>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="https://order.mi.com/invite/list?r=26153.1557822362">
+                                            <a href="/home/ss">
                                                 购买资格
                                                 <i class="J_miInviteTotal">
                                                 </i>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="https://order.mi.com/cashAccount?r=26153.1557822362">
+                                            <a href="/home/ss">
                                                 现金账户
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="https://order.mi.com/ecard/bind?r=26153.1557822362">
+                                            <a href="/home/ss">
                                                 小米礼品卡
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="https://order.mi.com/huanxin/list?r=26153.1557822362">
+                                            <a href="/home/ss">
                                                 现金券
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="https://order.mi.com/user/favorite?r=26153.1557822362">
+                                            <a href="/home/ss">
                                                 喜欢的商品
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="https://order.mi.com/user/coupon?r=26153.1557822362">
+                                            <a href="/home/ss">
                                                 优惠券
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="https://order.mi.com/user/address?r=26153.1557822362">
+                                            <a href="/home/ss">
                                                 收货地址
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="uc-nav-box">
-                                <div class="box-hd">
-                                    <h3 class="title">
-                                        售后服务
-                                    </h3>
-                                </div>
-                                <div class="box-bd">
-                                    <ul class="uc-nav-list">
-                                        <li>
-                                            <a href="//service.order.mi.com/record/list?_r=26153.1557822362">
-                                                服务记录
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="//service.order.mi.com/apply/front?_r=26153.1557822362">
-                                                申请服务
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="//service.order.mi.com/user/compensate?_r=26153.1557822362">
-                                                领取快递报销
                                             </a>
                                         </li>
                                     </ul>
@@ -162,19 +136,14 @@
                                 <div class="box-bd">
                                     <ul class="uc-nav-list">
                                         <li>
-                                            <a href="https://account.xiaomi.com/" target="_blank">
+                                            <a href="/home/ss" target="_blank">
                                                 个人信息
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="https://account.xiaomi.com/pass/auth/security/home#service=setPassword"
+                                            <a href="/home/ss"
                                             target="_blank">
                                                 修改密码
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="http://uvip.xiaomi.cn" target="_blank">
-                                                社区VIP认证
                                             </a>
                                         </li>
                                     </ul>
