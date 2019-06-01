@@ -96,6 +96,11 @@
                         <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1"
                         rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending"
                         style="width: 50px;">
+                           积分
+                        </th>
+                        <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1"
+                        rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending"
+                        style="width: 50px;">
                            头像
                         </th>
                         <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1"
@@ -158,6 +163,10 @@
 
                             {{--$v->status ? '开启' : '禁用'--}}
 
+                        </td>
+                         <td class=" ">
+                            
+                            <a class="btn btn-small"  title="用户积分" href="/admins/integral/{{$v->id}}">积分</a>
                         </td>
                          @php
                                 $res =  DB::table('users')

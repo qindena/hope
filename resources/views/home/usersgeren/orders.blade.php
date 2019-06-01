@@ -284,7 +284,7 @@
                                             </thead>
                                             @foreach ($rs as $k => $v)
                                             @php
-                                                $detail = DB::table('detail')->where('oid',$v->oid)->first();
+                                                $detail = DB::table('detail')->where('oid',$v->id)->first();
                                                 $good = DB::table('goods')->where('id',$detail->gid)->first();
                                                 
                                                 $gspic = $goodspicture->where('gid',$detail->gid)->select('gpic')->first();

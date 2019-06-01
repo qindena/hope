@@ -10,8 +10,8 @@
 <div id="o-header-2013"><div id="header-2013" style="display:none;"></div></div>
 <div class="w w1 header clearfix" style="margin-bottom:39px ">
 	<div id="logo">
-		<a href="http://www.jd.com/" class="link1" target="_blank">
-		<img src="./images/logo-201305.png" alt="大米商城">
+		<a href="/" class="link1" target="_blank">
+		<img src="/home/images/mi-logo.png" alt="大米商城">
 		</a>
 		<a href="http://success.jd.com/success/success.action?orderId=44392478919&amp;rid=0.746903008460361#none" class="link2"><b></b>"结算页"</a>
 	</div>
@@ -36,7 +36,7 @@
 		<input type="hidden" id="skuIds" value="1832201"><!-- 商品id串  -->
 	<!-- 再次购买按钮 -->
     <div class="btn-area mb10">
-        <a class="btn-ordershow" href="http://order.jd.com/center/list.action" clstag="pageclick|keycount|trade_201602181|31">查看订单</a>
+        <a class="btn-ordershow" href="/home/oindex" clstag="pageclick|keycount|trade_201602181|31">查看订单</a>
                     <a class="btn-buyagain ml10" href="http://cart.jd.com/cart/dynamic/reBuyForOrderCenter.action?wids=1832201&amp;nums=1&amp;rid=1478856930554" clstag="pageclick|keycount|trade_201602181|32">
                 <i></i>
                             再次购买

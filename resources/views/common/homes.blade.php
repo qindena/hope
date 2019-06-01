@@ -137,7 +137,7 @@
                                 </span>
                             </li>
                             <li><a href="#">消息通知</a></li>
-                            <li><a href="#">我的订单</a></li>
+                            <li><a href="/home/oindex">我的订单</a></li>
                         </ul>
                     @else
                         <ul>
