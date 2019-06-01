@@ -27,11 +27,6 @@
                         </th>
                         <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1"
                         rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending"
-                        style="width: 90px;">
-                            用户名
-                        </th>
-                        <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1"
-                        rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending"
                         style="width: 40px;">
                             总积分
                         </th>
@@ -46,9 +41,6 @@
  						<tr class="even">
                         <td class="">
                             {{$rs->id}}
-                        </td>
-                        <td class=" ">
-                            {{$rs->uname}}
                         </td>
 
                         <td class=" ">
