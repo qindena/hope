@@ -128,6 +128,11 @@
                 <div class="clear">
                 </div>
             </div>
+            <!-- 商品评论 -->
+            @php
+             $cnums = 0;
+            @endphp
+            
             <div class="panel" id="panel02">
                 <p class="sell">
                     买家评价
@@ -139,28 +144,36 @@
                         晒图(13)
                     </span>
                 </p>
+                @foreach($comres as $comk=>$comv)
                 <div class="judge01">
                     <div class="idimg">
                         <img src="/details/images/shopdetail/detail102.png">
                     </div>
                     <div class="write">
                         <p class="idname">
-                            落***1
+                            {{$comv->uname}}
                         </p>
                         <p>
-                            杯子很可爱！就是有两三个杯子后面的小图案有一丢丢斜下来，不过没多大关系，其他的还好。有一点真的特别特别好的就是😂包裹的非常非常非常严实，简直就是里三层外三层！杯子完好无损，赠送的刷子也包装的很好😂让我第一眼以为那是一个棉花糖hhh
+                            {{$comv->content}}
                         </p>
                         <p class="which">
-                            颜色:创意胡子
+                            留言时间:{{date('Y-m-d H:i:s', $comv->addtime)}}
                         </p>
+                        @if($comv->url != null)
+                        @php
+                        $comurl = explode(',', $comv->url);
+                        @endphp
+                        @foreach($comurl as $k=>$v)
                         <img src="/details/images/shopdetail/detail103.jpg" width="40px" height="40px">
-                        <img src="/details/images/shopdetail/detail104.jpg" width="40px" height="40px">
-                        <img src="/details/images/shopdetail/detail105.jpg" width="40px" height="40px">
+                        @endforeach
+                        @endif
                     </div>
                 </div>
+                @endforeach
                 <div class="clear">
                 </div>
             </div>
+
             <div class="panel" id="panel03">
                 <p class="sell">
                     本店热卖商品

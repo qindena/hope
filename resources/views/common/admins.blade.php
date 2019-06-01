@@ -196,6 +196,12 @@
                             
                             <li><a href="/admin/lunbo">浏览轮播图</a></li>
                         </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="icon-list"></i>评论管理</a>
+                        <ul class='closed'>
+                            <li><a href="/admin/comment">浏览评论</a></li>
+                        </ul>
                     </li> 
                 </ul>
             </div>         
