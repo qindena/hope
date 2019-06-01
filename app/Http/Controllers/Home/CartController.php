@@ -24,10 +24,25 @@ class CartController extends Controller
         }
     }
 
+    // 处理结算时的商品id
+    public function cartmath(Request $request)
+    {
+        $rs = $request->cartid;
+        dump($rs);
+        $gnum = $request->gnum;
+        // dump($gnum);
+        Session::put('temcart', $rs);
+        Session::put('gnum', $gnum);
+        // $data = Session::all();
+        // dump($data);
+        // dump($gnum);
+    }
+
     //购物车前台遍历
     public function cartinfo(Request $request)
     {	
-        $data = $request->session()->all();
+        // $data = $request->session()->all();
+        // dump($data);
         $cars = Session::get('cart');
         // dump($cars);
         if($cars == true){
@@ -43,8 +58,6 @@ class CartController extends Controller
         }else{
             $rs = [];
         }
-        
-        // dd($data);
         $goodspicture = new Goodspicture();
     	return view('home.cart.cartinfo',[
     		'title'=>'购物车详情',

@@ -13,7 +13,9 @@
 
 <table class="table table-hover">
 <div class="bs-example" data-example-id="hoverable-table">
-<form action="/home/jiesuan" method="post" enctype="multipart/form-data">
+	
+<!-- <form action="/home/jiesuan" method="post" enctype="multipart/form-data"> -->
+<form action="javascript:void(0)" method="get" enctype="multipart/form-data">
     <table class="table table-hover">
 @if ($rs)
       <thead>
@@ -72,7 +74,7 @@
 					</ul>
 				</div>
 				<div class="jiesuan fr">
-					<div class="amount jiesuanjiage fl" >合计（不含运费）：<span id="total">0元</span></div>
+					<div class="amount jiesuanjiage fl" >合计（不含运费）：<span id="total">0</span></div>
 					<div class="jsanniu fr"><input class="jsan" type="submit" name="jiesuan" value="去结算"></div>
 					<div class="clear"></div>
 				</div>
@@ -98,6 +100,32 @@
 
 @section('js')
 <script>
+	// 去结算
+	$('.jsan').click(function(){
+		var arr = $('.check');
+		var arrs = {};
+		var gnum = {};
+		for(var i = 0; i < arr.length; i++){
+			var checks = arr[i];
+			var nums = $(checks).prop('checked');
+			// console.log(nums);
+			if(nums == true){
+				var cid = $(checks).parents('tr').find('.check').val();
+				// console.log(cid);
+				arrs[i] = cid;
+				// var cnum = $(checks).parents('tr').children('th').clildren('div').children('.qty');
+				var cnum = $(checks).parents('tr').find('.qty').val();
+				// console.log(cnum);
+				gnum[i] = cnum;
+			}
+		}
+		// console.log(arrs);
+		// console.log(gnum);
+		$.post('/home/cartmath', {'_token':"{{csrf_token()}}",cartid:arrs,gnum:gnum}, function(data){
+			// console.log(data);
+			window.location.href = "/home/jiesuan";
+		})
+	});
 	//全选
 	$('.as').click(function(){
 		//$('.check').attr('checked',true)
