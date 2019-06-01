@@ -24,7 +24,7 @@
         </div>
         <div class="page-main user-main">
             <div class="container">
-                <div class="row">
+                <div class="row" style="margin-left: -40px">
                     <div class="span4">
                         <div class="uc-box uc-sub-box">
                             <div class="uc-nav-box">
@@ -36,7 +36,7 @@
                                 <div class="box-bd">
                                     <ul class="uc-nav-list">
                                         <li>
-                                            <a href="//static.mi.com/order/">
+                                            <a href="/home/oinde">
                                                 我的订单
                                             </a>
                                         </li>
@@ -74,7 +74,7 @@
                                 </div>
                                 <div class="box-bd">
                                     <ul class="uc-nav-list">
-                                        <li class="active">
+                                        <li>
                                             <a href="/home/geren">
                                                 我的个人中心
                                             </a>
@@ -181,7 +181,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="span16">
+                   
+                         <div class="span16" style="float:right;margin-right:-45px">
                         <div class="uc-box uc-main-box">
                             <div class="uc-content-box">
                                 <div class="box-hd">
@@ -189,7 +190,7 @@
                                         喜欢的商品
                                     </h1>
                                 </div>
-                                @if (!$co[0]->id == '')
+                                @if(count($co))
                                 <div class="box-bd">
                                     <div class="xm-goods-list-wrap">
                                         <ul class="xm-goods-list clearfix">
@@ -227,15 +228,17 @@
                                     <div class="xm-pagenavi">
                                     </div>
                                 </div>
-                                @else
-                                <div class="box-bd">
+                               @else
+                               <div class="box-bd">
                                     <p class="empty">您暂未收藏任何商品。</p>
                                     <div class="xm-pagenavi"></div>
                                 </div>
-                                @endif
+                               @endif
                             </div>
                         </div>
                     </div>  
+
+
                 </div>
             </div>
         </div>               

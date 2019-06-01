@@ -7,6 +7,12 @@ use App\Http\Controllers\Controller;
 use DB;
 use App\Model\Admin\Message;
 use App\Model\Admin\Poster;
+use App\Http\Controllers\Admin\TypeController;
+use App\Model\Admin\Type;
+use App\Model\Admin\Goods;
+use App\Model\Admin\link;
+use App\Model\Admin\Lunbo;
+use App\Model\Admin\Goodspicture;
 
 class GerenController extends Controller
 {

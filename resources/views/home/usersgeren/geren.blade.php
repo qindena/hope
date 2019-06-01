@@ -37,7 +37,7 @@
                                 <div class="box-bd">
                                     <ul class="uc-nav-list">
                                         <li>
-                                            <a href="//static.mi.com/order/">
+                                            <a href="/home/oindex">
                                                 我的订单
                                             </a>
                                         </li>

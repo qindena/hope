@@ -15,40 +15,24 @@ use DB;
 
 class CollectController extends Controller
 {
-    //
+    //我的收藏
     public function index(Request $request)
-    {
-    	$type = new TypeController();
-    	// 导航栏的分类
-    	$rs = $type->getfenleiMessage(15);
-    	$goods = new Goods();
-    	$goodspicture = new Goodspicture();
-    	$link = new Link();
-    	$lunbo = new Lunbo();
-		//左侧导航栏
-    	$leftrs = $type->getfenleiMessage(26);
-    	
-    	$co = DB::table('collect')->get();
-    	if($co){
-    		var_dump($co['0']['id']);exit; 
-    	}
+    {	
+    	$uid = session('uid');
+    	$co = DB::table('collect')->where('uid',$uid)->get();
     	return view('home.usersgeren.collect', [
-    			'rs'=>$rs,
-    			'goods'=>$goods,
-    			'goodspicture'=>$goodspicture,
-    			'leftrs'=>$leftrs,
-    			'type'=>$type,
-    			'link'=>$link,
-    			'lunbo'=>$lunbo,
     			'co'=>$co
     		]);
     }
 
+    //添加我的收藏
     public function coll($id)
     {
+    	$uid = session('uid');
     	$coll = Goods::where('id', $id)->first();
     	$collpic = Goodspicture::where('gid',$coll->id)->get();
-    	if ($coll && $collpic) {
+    	if ($coll && $collpic && $uid) {
+    		$collect['uid'] = $uid;
     		$collect['gid'] = $coll->id;
 	    	$collect['gname'] = $coll->gname;
 	    	$collect['price'] = $coll->price;
@@ -65,6 +49,7 @@ class CollectController extends Controller
     	return back();
     }
 
+    //删除我的收藏
     public function colls($id)
     {
     	$collc = DB::table('collect')->where('id',$id)->first();
