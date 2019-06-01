@@ -193,8 +193,10 @@ class RegistController extends Controller
 	public function logout()
     {
        	//清除session
-      	session::forget('uid');
-
+       	/*session::forget('cart');
+      	session::forget('uid');*/
+      	session::flush();
+      	
         //重定向
         return redirect('/');
     }

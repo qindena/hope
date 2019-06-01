@@ -72,7 +72,7 @@
                 <!-- 左侧菜单 -->
                 <div class="header_nav">
                     <ul>
-                        <li><a href="#">小米商城</a></li>
+                        <li><a href="/">小米商城</a></li>
                         <li><a href="#">MIUI</a></li>
                         <li><a href="#">IoT</a></li>
                         <li><a href="#">云服务</a></li>
@@ -152,9 +152,11 @@
         <!-- 顶部导航 end -->
         <!-- 主体导航 start -->
         <div class="main_nav con_width">
+            <a href="/">
             <div class="logo">
                 <img src="/home/images/mi-logo.png" alt="MIlogo" title="小米官网">
             </div>
+            </a>
             <div class="nav">
                 <ul>
                     @php
