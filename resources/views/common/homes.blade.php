@@ -131,13 +131,13 @@
                 <!-- 右侧购物车 -->
                 <div class="header_shopcart">
                     <div class="shopcart_logo">
-                        <a href="/home/cart">
+                        <a href="/home/cart" >
                             <i class="iconfont icon-cart"></i>
                             @php
                             $cartgs = Session('cart');
                             $cartnums = count($cartgs);
                             @endphp
-                            购物车（{{$cartnums}}）  
+                            购物车（<span class="homes-cart">{{$cartnums}}</span>）  
                         </a>
                         <div class="shopcart-info">
                             @if($cartgs == null)

@@ -30,8 +30,8 @@
     <div class="centerbox">
         <input type="hidden" id="gsid"  value="{{$gsrs->id}}">
     	<p class="imgname">{{$gsrs->gname}}</p>
-    	<p class="Aprice">价格：<samp>￥{{$gsrs->price}}.00</samp></p>
-    	<p class="price">促销价：<samp>￥49.00</samp></p>
+    	<p class="Aprice">价格：<samp>￥{{$gsrs->price+1}}.00</samp></p>
+    	<p class="price">促销价：<samp>￥{{$gsrs->price}}.00</samp></p>
     	<p class="youhui">店铺优惠：<samp>购物满两件打八折</samp></p>
     	<p class="kefu">客服：</p>
         <ul>
@@ -231,18 +231,20 @@
 });
 
 $('.cart').click(function(){
-    // alert(1);
     var id = $('#gsid').attr('value');
-    console.log(id);
     $.post('/home/cartajax', {'_token':"{{csrf_token()}}",id:id}, function(data){
         
     });
 });
 $('.cart').click(function(){
     popup({type:'success',msg:"操作成功",delay:1000,callBack:function(){
-    console.log('callBack~~~');
-}});
+        
+    }});
 })
-
+$('.cart').click(function(){
+    $.get('/home/cartnum', function(data){
+        var inpa = $('.homes-cart').text(data);
+    });
+});
 </script>
 @stop

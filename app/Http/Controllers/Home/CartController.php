@@ -24,6 +24,13 @@ class CartController extends Controller
         }
     }
 
+    //改变购物车数值
+    public function cartnum()
+    {
+        $cartnum = Session::get('cart');
+        $nums = count($cartnum);
+        echo $nums;
+    }
     // 处理结算时的商品id
     public function cartmath(Request $request)
     {
