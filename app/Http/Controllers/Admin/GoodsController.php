@@ -211,7 +211,9 @@ class GoodsController extends Controller
         // 获取信息 以备删除图片
         $rs = Goodspicture::where('gid', $id)->get();
         foreach($rs as $k => $v){
-                unlink('.'.$v->gpic);
+            if($v->pic != null){
+                @unlink('.'.$v->gpic);
+            }
         }
         $gm = Goods::find($id);
         $gm->delete();
