@@ -42,7 +42,7 @@
         </ul>
         <div class="clear"></div>
         <p class="chima">尺码：</p>
-        <p class="buy"><a href="javascript:void(0);" class="cart" id="firstbuy">加入购物车</a><a href="#">收藏</a></p>
+        <p class="buy"><a href="javascript:void(0);" class="cart" id="firstbuy">加入购物车</a><a href="/home/coll/{{$gsrs->id}}">收藏</a></p>
    		<div class="clear"></div>
  <!--        <div class="fenx"><a href="#"><img src="/details/images/shopdetail/tell07.png"></a></div> -->
         <p class="fuwu">服务承诺：</p>
@@ -103,11 +103,6 @@
                     累计评价
                 </a>
             </li>
-            <li>
-                <a href="#panel03">
-                    商品推荐
-                </a>
-            </li>
         </ul>
         <div class="panelContainer">
             <div class="panel" id="panel01">
@@ -141,7 +136,7 @@
                     全部评价({{$nums}})
                 </p>
                 @foreach($comres as $comk=>$comv)
-                <div class="judge01">
+                <div class="judge01" style="margin-top:40px">
                     @php
                         $id = $users->where('username',$comv->uname)->select('id')->first();
                         $header = $message->where('uid',$id->id)->select('header')->first();
@@ -152,6 +147,11 @@
                     <div class="write">
                         <p class="idname">
                             {{$comv->uname}}
+                        </p>
+                        <p>
+                            @for($gi = 0; $gi < $comv->star; $gi ++)
+                            <img src="/home/stars.jpg" height="30px" style="margin-left:-5px" alt="">
+                            @endfor
                         </p>
                         <p>
                             <b style="font-size: 15px">{{$comv->content}}</b>
@@ -170,50 +170,6 @@
                     </div>
                 </div>
                 @endforeach
-                <div class="clear">
-                </div>
-            </div>
-
-            <div class="panel" id="panel03">
-                <p class="sell">
-                    本店热卖商品
-                </p>
-                <div class="com">
-                    <a href="#" class="ex01">
-                        <figure>
-                            <img src="/details/images/index_img/content_11.jpg">
-                            <figcaption>
-                                木质花瓶
-                            </figcaption>
-                        </figure>
-                        <p>
-                            木质简约花瓶 亲近大自然
-                        </p>
-                        <div class="bottom">
-                            <samp>
-                                商城价:￥34元
-                            </samp>
-                            <input type="button" style=" cursor:pointer;" value="购买" />
-                        </div>
-                    </a>
-                    <a href="#" class="ex01">
-                        <figure>
-                            <img src="/details/images/index_img/content_12.png">
-                            <figcaption>
-                                假花篮子
-                            </figcaption>
-                        </figure>
-                        <p>
-                            墙上假花优雅系列蓝色篮子
-                        </p>
-                        <div class="bottom">
-                            <samp>
-                                商城价:￥543元
-                            </samp>
-                            <input type="button" style=" cursor:pointer;" value="购买" />
-                        </div>
-                    </a>
-                </div>
                 <div class="clear">
                 </div>
             </div>
