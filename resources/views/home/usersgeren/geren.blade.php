@@ -141,7 +141,7 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="/home/ss"
+                                            <a href="/home/xgm"
                                             target="_blank">
                                                 修改密码
                                             </a>

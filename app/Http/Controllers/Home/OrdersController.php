@@ -23,32 +23,12 @@ class OrdersController extends Controller
     	$search = $request->oid;
     	$uid = session('uid');
 
-    	$rs = Orders::where('oid','like','%'.$search.'%')->where('uid',$uid)->get();
+    	$rs = Orders::where('oid','like','%'.$search.'%')->where('uid',$uid)->orderBy('id', 'desc')->get();
     	$goodspicture = new Goodspicture();
     	return view('home.usersgeren.orders',[
     		'rs'=>$rs,
     		'goodspicture'=>$goodspicture,
     		'request'=>$request,
     	]);
-    }
-
-    //删除我的订单
-    public function oin(Request $request, $id)
-    {
-    	$rs = Orders::find($id);
-        //删除订单时删除订单详情
-        $det = Detail::where('oid', $rs->oid)->delete();
-
-        if(!$det){
-            return back();
-        }
-        //根据id删除数据
-        $data = Orders::destroy($id);
-
-        if($data){
-            return redirect('/home/oindex');
-        } else {
-            return back();
-        }
     }
 }

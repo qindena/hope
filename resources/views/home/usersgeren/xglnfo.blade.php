@@ -145,7 +145,7 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="/home/ss">
+                                            <a href="/home/xgm">
                                                 修改密码
                                             </a>
                                         </li>

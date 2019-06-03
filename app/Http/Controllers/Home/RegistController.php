@@ -203,7 +203,47 @@ class RegistController extends Controller
 
     public function ss()
     {
+    	//404
     	//重定向
         return view('home.404');
+    }
+
+    public function xgm()
+    {
+    	//修改密码页面
+    	//重定向
+        return view('home.usersgeren.xgm');
+    }
+
+    public function ajaxxg(Request $request)
+    {
+    	$cd = $request->input('tv');
+    	//ajax 确定原密码
+    	//重定向
+        $uid = session('uid');
+        $se = DB::table('users')->where('id',$uid)->first();
+        if(Hash::check($cd,$se->password)){
+			echo 1;	
+	    } else {
+	    	echo 0;
+	    }
+    }
+
+    public function xgcg(Request $request)
+    {
+    	//两次密码一致
+      	$res['password'] = Hash::make($request->password);
+
+      	$data = DB::table('users')->where('id',session('uid'))->update($res);
+
+      	if($data){
+        //清空session
+      	  session(['uid'=>'']);
+	
+      	  return redirect('/home/login');
+      	} else {
+
+     	   return back();
+     	 }
     }
 }

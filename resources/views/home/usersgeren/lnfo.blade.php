@@ -124,7 +124,7 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="/home/ss">
+                                            <a href="/home/xgm">
                                                 收货地址
                                             </a>
                                         </li>

@@ -13,6 +13,21 @@
     <link rel="stylesheet" href="/home/order/css/myjd.order2015bak.css">
     <link rel="stylesheet" href="/home/order/css/alpha3bak.css">
     <link charset="utf-8" rel="stylesheet" href="/home/order/css/tipsbak.css">
+    <style type="text/css">
+        .J-reminder{
+            height: 21px;
+            line-height: 21px;
+            padding: 0 11px;
+            background: #02bafa;
+            border: 1px #26bbdb solid;
+            border-radius: 3px;
+            color: #fff;
+            display: inline-block;
+            text-decoration: none;
+            font-size: 12px;
+            outline: none;
+        }
+    </style>
 @section('home')
       <div class="breadcrumbs">
             <div class="container">
@@ -146,7 +161,7 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="/home/ss"
+                                            <a href="/home/xgm"
                                             target="_blank">
                                                 修改密码
                                             </a>
@@ -398,16 +413,17 @@
                                                         <div class="operate">
                                                             <div id="pay-button-43244043248" _baina="0">
                                                             </div>
-                                                            <a href="/home/oin/{{$v->id}}">
-                                                                取消订单
-                                                            </a>
-                                                            <br>
+                                                            
                                                             @if($v->status == 0 || $v->status == 1)
                                                             <a class="J-reminder" href="" data-orderid="43244043248">
                                                                 催单
                                                             </a>
                                                             @elseif($v->status == 2)
-                                                            <a class="J-reminder" href="" data-orderid="43244043248">
+                                                            <a href="javascript:void(0)" class="aa J-reminder">
+                                                                确定收货
+                                                            </a>
+                                                            <br>
+                                                            <a class="J-reminder bb" href="" data-orderid="43244043248" style="display:none;width: 60px;margin:0 auto">
                                                                 去评论
                                                             </a>
                                                             @elseif($v->status == 3)
@@ -436,5 +452,10 @@
 @stop
 
 @section('js')
-
+<script type="text/javascript">
+    $('.aa').click(function(){
+        $(this).parent().find('.bb').css('display','block');
+        $(this).css('display','none');
+    });
+</script>
 @stop

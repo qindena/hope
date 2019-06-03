@@ -24,7 +24,7 @@
         </div>
         <div class="page-main user-main">
             <div class="container">
-                <div class="row" style="margin-left: -40px">
+                <div class="row">
                     <div class="span4">
                         <div class="uc-box uc-sub-box">
                             <div class="uc-nav-box">
@@ -139,7 +139,7 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="/home/ss">
+                                            <a href="/home/xgm">
                                                 修改密码
                                             </a>
                                         </li>
@@ -149,7 +149,7 @@
                         </div>
                     </div>
                    
-                         <div class="span16" style="float:right;margin-right:-45px">
+                         <div class="span16">
                         <div class="uc-box uc-main-box">
                             <div class="uc-content-box">
                                 <div class="box-hd">
