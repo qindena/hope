@@ -12,6 +12,8 @@ use App\Model\Admin\Lunbo;
 use App\Model\Admin\Goodspicture;
 use App\Model\Admin\Poster;
 use App\Model\Admin\comment;
+use App\Model\Admin\user;
+use App\Model\Admin\message;
 use DB;
 
 class IndexController extends Controller
@@ -57,8 +59,12 @@ class IndexController extends Controller
 
         //评论模块
         $comment = new comment();
-        $comres = comment::where('id',$gsid)->get();
-        // dump($comres);
+        $comres = comment::where('gid',$gsid)->get();
+        $nums = count($comres);
+        //用户信息模块
+        $users = new user();
+        $message = new message();
+        $id = $users->where('username', 'timehongyan')->select('id')->first();
     	// 为你推荐模块
     	$recommend = Type::where('tname', '为你推荐')->first();
     	return view('home.xiangqin', [
@@ -71,7 +77,10 @@ class IndexController extends Controller
     			'poster'=>$poster,
     			'recommend'=>$recommend,
                 'comment'=>$comment,
-                'comres'=>$comres
+                'comres'=>$comres,
+                'nums'=>$nums,
+                'users'=>$users,
+                'message'=>$message
     		]);
     }
 }

@@ -40,19 +40,19 @@
 				@foreach($rs as $k => $v)
 				<div class="indent4">
 					<div class="indent4_a">
-						<img src="{{$v['gpic']}}" alt="">
+						<img src="{{$v['gpic']}}" height="40px" alt="">
 					</div>
-					<div class="indent4_b">
+					<div class="indent4_b" style="line-height: 25px;">
 						<a href="">{{$v['gname']}}</a>
 					</div>
 					
-					<div class="indent4_c">
+					<div class="indent4_c" style="line-height: 25px;">
 						{{$v['price']}}  X {{$v['num']}}
 					</div>
 					<div class="indent4_null">
 						
 					</div>
-					<div class="indent4_d">
+					<div class="indent4_d" style="line-height: 25px;">
 						{{$v['total']}}
 					</div>
 				</div>

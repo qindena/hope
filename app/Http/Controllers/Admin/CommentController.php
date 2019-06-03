@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\Admin\comment;
+use DB;
 
 class CommentController extends Controller
 {
@@ -87,6 +88,20 @@ class CommentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = DB::table('comment')->find($id);
+        if($data->url != null){
+            $url = explode(',', $data->url);
+        }
+        $res = DB::table('comment')->where('id',$id)->delete();
+        if($res){
+            if($data->url != null){
+                foreach($url as $v){
+                    @unlink($v);
+                }
+            }
+            return redirect('/admin/comment')->with('success', '删除成功');
+        }else{
+            return back();
+        }
     }
 }

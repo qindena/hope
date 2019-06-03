@@ -111,18 +111,16 @@
 			// console.log(nums);
 			if(nums == true){
 				var cid = $(checks).parents('tr').find('.check').val();
-				// console.log(cid);
 				arrs[i] = cid;
-				// var cnum = $(checks).parents('tr').children('th').clildren('div').children('.qty');
 				var cnum = $(checks).parents('tr').find('.qty').val();
-				// console.log(cnum);
 				gnum[i] = cnum;
 			}
 		}
-		// console.log(arrs);
-		// console.log(gnum);
+		if($.isEmptyObject(arrs)){
+			alert('请勾选要购买的商品');
+			return false;
+		}
 		$.post('/home/cartmath', {'_token':"{{csrf_token()}}",cartid:arrs,gnum:gnum}, function(data){
-			// console.log(data);
 			window.location.href = "/home/jiesuan";
 		})
 	});

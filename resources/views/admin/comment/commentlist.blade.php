@@ -85,7 +85,7 @@
                         </th>
                         <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1"
                         rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending"
-                        style="width: 50px;">
+                        style="width: 100px;">
                             评论时间
                         </th>
                         <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1"
@@ -101,29 +101,37 @@
                     </tr>
                 </thead>
                 <tbody role="alert" aria-live="polite" aria-relevant="all">
-					
-                    <!-- <tr class="odd" align="center"> -->
-					<tr class="even" align="center">	
+					@foreach($rs as $k=>$v)
+                    @if($k%2 == 0)
+                    <tr class="odd" align="center">
+                    @else
+					<tr class="even" align="center">
+                    @endif	
                         <td class="  sorting_1">
-                           
+                           {{$v->id}}
                         </td>
                         <td class=" ">
-                           
+                           {{$v->uname}}
                         </td>
                         <td class=" ">
-                           
+                           {{$v->content}}
                         </td>
                         <td class=" ">
-                           
+                           {{$v->star}}
                         </td>
                         <td class=" ">
-                           
+                           {{$v->gid}}
                         </td>
                         <td class=" ">
-                           
+                           {{date('Y-m-d H:i:s', $v->addtime)}}
                         </td>
+                        @php
+                        $gpics = explode(',', $v->url);
+                        @endphp
                         <td class=" ">
-                           
+                        @foreach($gpics as $val)
+                            <img src="{{$val}}" width="40px" alt="">
+                        @endforeach
                         </td>
                         <td class=" ">
                         	<!-- <a href="" class="btn">查看商品详情</a>
@@ -131,16 +139,16 @@
                             <a href="" class="btn">删除</a> -->
 
                             <span class="btn-group">
-                                <form class="btn btn-small" action="" method="post">
+                                <form class="btn btn-small" action="/admins/comment/{{$v->id}}" method="post">
 									{{ method_field('DELETE') }}
 									{{csrf_field()}}
 									<button class="icon-trash"></button>
                                 </form>
-                                <!-- <a href="#" class="btn btn-small"><i class="icon-trash"></i></a> -->
                             </span>
 
                         </td>
                     </tr>
+                    @endforeach
                 </tbody>
             </table>
             <style>

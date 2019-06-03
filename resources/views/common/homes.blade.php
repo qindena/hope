@@ -88,6 +88,9 @@
                     <div class="shopcart_logo">
                         <a href="/home/cart">
                             <i class="iconfont icon-cart"></i>
+                            @php
+                                
+                            @endphp
                             购物车（0）  
                         </a>
                         <div class="shopcart-info">

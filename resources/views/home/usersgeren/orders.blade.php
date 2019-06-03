@@ -423,7 +423,7 @@
                                                                 确定收货
                                                             </a>
                                                             <br>
-                                                            <a class="J-reminder bb" href="" data-orderid="43244043248" style="display:none;width: 60px;margin:0 auto">
+                                                            <a class="J-reminder bb" href="/home/comment?id={{$detail->gid}}" data-orderid="43244043248" style="display:none;width: 60px;margin:0 auto">
                                                                 去评论
                                                             </a>
                                                             @elseif($v->status == 3)

@@ -19,6 +19,52 @@
     <link rel="stylesheet" href="/home/css/index.css">
     <script src="/home/js/index.js"></script>
     <link rel="stylesheet" type="text/css" href="/home/css/style.css">
+    <style type="text/css">
+        .user-auction .user{
+            position: relative;
+            width: 110px;
+            padding: 0;
+            white-space: nowrap;
+        }
+
+
+        .user-auction .user .user-name{
+            position: relative;
+            z-index: 5;
+            display: block;
+            width: 120px;
+            height: 40px;
+            text-align: center;
+            color: white;
+            color: #b0b0b0;
+            line-height: 40px;
+            margin-top: 20px;
+            color: #222;
+        }
+        .user-auction .user .user-menu{
+            display: none;
+            position: absolute;
+            z-index: 3;
+            width: 120px;
+            margin: 0;
+            padding: 7px 0;
+            list-style-type: none;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+        }
+
+
+        .user-auction .user .user-menu li{
+            text-align:center;
+        }
+
+
+        .user-auction .user .user-menu li a{
+            color: #b0b0b0;
+            line-height: 40px;
+            display: inline-block;
+        }
+    </style>
 </head>
 <body>
 	<div id="top">
@@ -29,39 +75,53 @@
 			<div class="top1_one">
 				<b>我的购物车</b>
 			</div>
-			<span class="top2_a">
-				我的订单
-			</span>
-			<span class="top2">
-				1275549167
-				<div class="top2_one">
-					<a href="./personal.html">
-						<div class="top2_one1">
-							个人中心
-						</div>
-					</a>
-					<a href="">
-						<div class="top2_one2">
-							评价晒单
-						</div>
-					</a>
-					<a href="">
-						<div class="top2_one2">
-							我的喜欢
-						</div>
-					</a>
-					<a href="">
-						<div class="top2_one2">
-							小米账户
-						</div>
-					</a>
-					<a href="">
-						<div class="top2_one2">
-							退出登录
-						</div>
-					</a>
-				</div>
-			</span>
+            @php
+                $uid = session('uid');
+                if($uid != null){
+                    $uname = DB::table('users')->where('id',$uid)->select('username')->first();
+                }
+            @endphp
+            <div class="user-auction">
+                @if(session('uid'))
+                    <ul>
+                        <li>
+                            <span class="user" id="userspan">
+                                <a rel="nofollow" class="user-name" href="/home/geren" target="_blank">
+                                    <span class="name">
+                                        {{$uname->username}}
+                                    </span>
+                                </a>
+                                <ul class="user-menu">
+                                    <li>
+                                        <a rel="nofollow" href="/home/geren" target="_blank">
+                                            个人中心
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a rel="nofollow" href="" target="_blank">
+                                            评价晒单
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a rel="nofollow" href="/home/collect" target="_blank">
+                                            我的喜欢
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a rel="nofollow" href="/home/logout">
+                                            退出登录
+                                        </a>
+                                    </li>
+                                </ul>
+                            </span>
+                        </li>
+                    </ul>
+                @else
+                    <ul>
+                        <a href="/home/login">登录</a>
+                    </ul>
+                @endif
+            </div>
 		</div>
 	</div>
 	<div id="shopping">
@@ -196,8 +256,33 @@
         <!-- 底部 end -->
     </div>
 </body>
+<script type="text/javascript">
+    $('#userspan').mouseover(function(){
+        $('.user-menu').css('display','block');
+        $('.user-name').css('background-color','white');
+        $('.user-name').css('color','#ff6700');
 
 
+        $('.user-menu li').mouseover(function(){
+            $(this).css('background-color','#f5f5f5');
+            $(this).css('color','#ff6700');
+        });
+
+
+        $('.user-menu li a').mouseover(function(){
+            $(this).css('color','#ff6700');
+        });
+    });
+
+
+    $('#userspan').mouseout(function(){
+        $('.user-menu').css('display','none');
+        $('.user-name').css('background-color','');
+        $('.user-name').css('color','#b0b0b0');
+        $('.user-menu li').css('background-color','');
+        $('.user-menu li a').css('color','');
+    });
+</script>
 @section('js')
 
 

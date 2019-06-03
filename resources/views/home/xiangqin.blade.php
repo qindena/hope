@@ -1,7 +1,7 @@
 @extends('common.homes')
 
 @section('title', $title)
-
+<link rel="stylesheet" type="text/css" href="/details/style/dialog.css">
 @section('home')
 	@php
 		$gsrs = $goods->find($gsid);
@@ -42,9 +42,9 @@
         </ul>
         <div class="clear"></div>
         <p class="chima">尺码：</p>
-        <p class="buy"><a href="#" id="firstbuy">立即购买</a><a href="javascript:void(0);" class="cart">加入购物车</a></p>
+        <p class="buy"><a href="javascript:void(0);" class="cart" id="firstbuy">加入购物车</a><a href="#">收藏</a></p>
    		<div class="clear"></div>
-        <div class="fenx"><a href="#"><img src="/details/images/shopdetail/tell07.png"></a></div>
+ <!--        <div class="fenx"><a href="#"><img src="/details/images/shopdetail/tell07.png"></a></div> -->
         <p class="fuwu">服务承诺：</p>
         <p class="pay">支付方式：</p>
     </div>
@@ -137,24 +137,24 @@
                 <p class="sell">
                     买家评价
                 </p>
-                <img src="/details/images/shopdetail/detail101.png">
                 <p class="judge">
-                    全部评价(20)
-                    <span>
-                        晒图(13)
-                    </span>
+                    全部评价({{$nums}})
                 </p>
                 @foreach($comres as $comk=>$comv)
                 <div class="judge01">
+                    @php
+                        $id = $users->where('username',$comv->uname)->select('id')->first();
+                        $header = $message->where('uid',$id->id)->select('header')->first();
+                    @endphp
                     <div class="idimg">
-                        <img src="/details/images/shopdetail/detail102.png">
+                        <img src="{{$header->header}}" height="40px">
                     </div>
                     <div class="write">
                         <p class="idname">
                             {{$comv->uname}}
                         </p>
                         <p>
-                            {{$comv->content}}
+                            <b style="font-size: 15px">{{$comv->content}}</b>
                         </p>
                         <p class="which">
                             留言时间:{{date('Y-m-d H:i:s', $comv->addtime)}}
@@ -164,7 +164,7 @@
                         $comurl = explode(',', $comv->url);
                         @endphp
                         @foreach($comurl as $k=>$v)
-                        <img src="/details/images/shopdetail/detail103.jpg" width="40px" height="40px">
+                        <img src="{{$v}}" width="40px" height="40px">
                         @endforeach
                         @endif
                     </div>
@@ -224,6 +224,8 @@
 @stop
 
 @section('js')
+<script src="/details/js/zepto.min.js"></script>
+<script type="text/javascript" src="/details/js/dialog.min.js"></script>
 <script src="/details/js/jquery-1.9.1.min.js"></script>
 <script src="/js/jquery-3.2.1.min.js"></script>
 <script src="/details/js/common.js"></script>
@@ -277,8 +279,14 @@ $('.cart').click(function(){
     var id = $('#gsid').attr('value');
     console.log(id);
     $.post('/home/cartajax', {'_token':"{{csrf_token()}}",id:id}, function(data){
-        console.log(data);
+        
     });
 });
+$('.cart').click(function(){
+    popup({type:'success',msg:"操作成功",delay:1000,callBack:function(){
+    console.log('callBack~~~');
+}});
+})
+
 </script>
 @stop
