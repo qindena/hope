@@ -16,7 +16,11 @@ class GoodsListController extends Controller
      */
     public function index()
     {
-        echo 123;
+        $id = $_GET['id'];
+
+        $goods = DB::table('goods')->where('tid',$id)->get();
+
+        return view('home/goods/listtype', ['goods'=>$goods,'id' => $id]);
     }
 
     /**
@@ -28,7 +32,7 @@ class GoodsListController extends Controller
     {
         $id = session('uid');
         $rs = DB::table('orders')->where('uid',$id)->first();
-       dump($rs);
+
         if(!$rs){
             return view('home/goods/city', ['uid' => $id]);
         } else {
@@ -59,14 +63,23 @@ class GoodsListController extends Controller
     {
         $gname = $request->search;
 
-        $rs = DB::table('goods')->where('gname','like','%'.$gname.'%')->orderBy('id','desc')->get();
+        $rs = DB::table('goods')
+        ->where('gname','like','%'.$gname.'%')->orderBy('id','desc')
+        ->get();
         $arr = [];
+        $res = [];
         foreach($rs as $k => $v){
+            $res[] = DB::table('goodspicture')->where('gid',$v->id)->value('gpic');
             $arr[] = DB::table('type')->where('id',$v->tid)->get();
             
-        }
-       $narr =  array_unique($arr);
-        return view('home/goods/list',['rs'=>$rs,'arr'=>$narr,'gname'=>$gname]);
+        }   
+
+        $nres = array_unique($res);
+        $narr =  array_unique($arr);
+
+       // dump($rs);
+       // dump($nres);
+        return view('home/goods/list',['rs'=>$rs,'arr'=>$narr,'gname'=>$gname,'res'=>$nres]);
     }
 
     /**
