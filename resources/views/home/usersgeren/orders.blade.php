@@ -311,7 +311,7 @@
                                                     <td style="padding:0px;">
                                                         <!-- 每一种商品 -->
                                                         <div style="padding:14px 0;border:1px solid #e5e5e5;border-collapse:collapse;">
-                                                            <div class="goods-item p-11362614">
+                                                            <div class="goods-item p-11362614" style="height: 40px">
                                                                 <div class="p-img">
                                                                     <a href="/home/details?id={{$detail->gid}}" clstag="click|keycount|orderinfo|order_product"
                                                                     target="_blank">
