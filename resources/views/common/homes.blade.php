@@ -365,7 +365,7 @@
 
         @show  
         <!-- 底部 start -->
-        <div class="footer">
+        <div class="footer" style="margin-top:200px">
             <!--服务 start-->
             <div class="footer_nav con_width clearfix">
                 <ul>

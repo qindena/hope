@@ -120,7 +120,7 @@ h1,h2,h3,h4,h5,h6{
 /*无商品的的购物车*/
 #shopping{
 	width: 1226px;
-	height: 1889px;
+	/*height: 1889px;*/
 	/*border: 1px solid red;*/
 	margin: 0px auto;
 	margin-top: 40px;
@@ -129,9 +129,10 @@ h1,h2,h3,h4,h5,h6{
 
 #cart{
 	width: 1226px;
-	height: 273px;
+	/*height: 273px;*/
 	/*border: 1px solid red;*/
 	margin-top: 70px;
+	margin-bottom: 100px;
 	
 }
 .cart1{

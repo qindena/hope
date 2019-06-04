@@ -8,91 +8,88 @@
 
 	
 </style>
-<div id="cart">
+<div id="cart" style="margin-bottom:100px">
 <div class="container">
+	<table class="table table-hover">
+		<div class="bs-example" data-example-id="hoverable-table">
+			
+		<!-- <form action="/home/jiesuan" method="post" enctype="multipart/form-data"> -->
+		<form action="javascript:void(0)" method="get" enctype="multipart/form-data">
+		    <table class="table table-hover">
+		@if ($rs)
+		      <thead>
+		        <tr>
+		          <th><a href="javascript:void(0)" class='as'>全选</a></th>
+		          <th>商品图片</th>
+		          <th>商品名称</th>
+		          <th>单价</th>
+		          <th>数量</th>
+		          <th>小计</th>
+		          <th>操作</th>
+		        </tr>
+		      </thead>
+		      <tbody class="catbody">
+		      	@foreach($rs as $k=>$v)
 
-<table class="table table-hover">
-<div class="bs-example" data-example-id="hoverable-table">
-	
-<!-- <form action="/home/jiesuan" method="post" enctype="multipart/form-data"> -->
-<form action="javascript:void(0)" method="get" enctype="multipart/form-data">
-    <table class="table table-hover">
-@if ($rs)
-      <thead>
-        <tr>
-          <th><a href="javascript:void(0)" class='as'>全选</a></th>
-          <th>商品图片</th>
-          <th>商品名称</th>
-          <th>单价</th>
-          <th>数量</th>
-          <th>小计</th>
-          <th>操作</th>
-        </tr>
-      </thead>
-      <tbody class="catbody">
-      	@foreach($rs as $k=>$v)
-
-        <tr>
-			<td>
-			<input type="checkbox" class="check" gid='{{$v->id}}' name="id[]" value="{{$v->id}}" />
-			</td>
-         	 @php
-					$res = $goodspicture->select('gpic')->where('gid',$v->id)->first();
-			@endphp
-          <td><img src="{{$res->gpic}}" style="width:80px"></td>
-          <td>{{$v->gname}}</td>
-          <td class="prc">{{$v->price}}</td>
-          <th>
-          	<div class="quantity clearfix">
-				<input type="button" value="-" class="minus">
-				<input type="text" name="num[]" value="1" class="qty" style="width:25px;text-align:center;" />
-				<input type="button" value="+" class="plus">
-			</div>
-		</th>
-          <td>¥<span class="amount">{{$v->price}}元</span></td>
-          <td>
-			<span class="remove btn btn-danger">删除</span>
-          </td>
-        </tr>
-      @endforeach
-      </tbody>
-    </table>
-    {{csrf_field()}}
-    
-  </div>
-</table>
-
+		        <tr>
+					<td>
+					<input type="checkbox" class="check" gid='{{$v->id}}' name="id[]" value="{{$v->id}}" />
+					</td>
+		         	 @php
+							$res = $goodspicture->select('gpic')->where('gid',$v->id)->first();
+					@endphp
+		          <td><img src="{{$res->gpic}}" style="width:80px"></td>
+		          <td>{{$v->gname}}</td>
+		          <td class="prc">{{$v->price}}</td>
+		          <th>
+		          	<div class="quantity clearfix">
+						<input type="button" value="-" class="minus">
+						<input type="text" name="num[]" value="1" class="qty" style="width:25px;text-align:center;" />
+						<input type="button" value="+" class="plus">
+					</div>
+				</th>
+		          <td>¥<span class="amount">{{$v->price}}元</span></td>
+		          <td>
+					<span class="remove btn btn-danger">删除</span>
+		          </td>
+		        </tr>
+		      @endforeach
+		      </tbody>
+		    </table>
+		    {{csrf_field()}}
+		</form>
+		  </div>
+	</table>
+	<div class="jiesuandan mt20 center" >
+		<div class="tishi fl ml20">
+			<ul>
+				<li><a href="/">继续购物</a></li>
+				<li><a href="javascript:void(0)" class="qk">清空购物车</a></li>
+				
+				<div class="clear"></div>
+			</ul>
+		</div>
+		<div class="jiesuan fr">
+			<div class="amount jiesuanjiage fl" >合计（不含运费）：<span id="total">0</span></div>
+			<div class="jsanniu fr"><input class="jsan" type="submit" name="jiesuan" value="去结算"></div>
+			<div class="clear"></div>
+		</div>
+		<div class="clear" ></div>
+	</div>			
+</div>
 </div>
 
-		<div class="jiesuandan mt20 center" >
-				<div class="tishi fl ml20">
-					<ul>
-						<li><a href="/">继续购物</a></li>
-						<li><a href="javascript:void(0)" class="qk">清空购物车</a></li>
-						
-						<div class="clear"></div>
-					</ul>
-				</div>
-				<div class="jiesuan fr">
-					<div class="amount jiesuanjiage fl" >合计（不含运费）：<span id="total">0</span></div>
-					<div class="jsanniu fr"><input class="jsan" type="submit" name="jiesuan" value="去结算"></div>
-					<div class="clear"></div>
-				</div>
-				<div class="clear" ></div>
-			</div>			
-</div>
 
-</form>
 @else
 <div class="cartclear" >
-			<div class="cart1">
-				<h2>你的购物车是空的!</h2>
-				<a href="/">
-					<div class="cart2">
-						马上去购物
-					</div>
-				</a>
+	<div class="cart1">
+		<h2>你的购物车是空的!</h2>
+		<a href="/">
+			<div class="cart2">
+				马上去购物
 			</div>
+		</a>
+	</div>
 </div>
 @endif
 
