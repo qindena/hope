@@ -233,7 +233,7 @@
 $('.cart').click(function(){
     var id = $('#gsid').attr('value');
     $.post('/home/cartajax', {'_token':"{{csrf_token()}}",id:id}, function(data){
-        
+        var inpa = $('.homes-cart').text(data);
     });
 });
 $('.cart').click(function(){
@@ -241,10 +241,5 @@ $('.cart').click(function(){
         
     }});
 })
-$('.cart').click(function(){
-    $.get('/home/cartnum', function(data){
-        var inpa = $('.homes-cart').text(data);
-    });
-});
 </script>
 @stop
