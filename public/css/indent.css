@@ -246,7 +246,7 @@ h1,h2,h3,h4,h5,h6{
 }
 .indent4_int{
 	width: 1130px;
-	height: 111px;
+	/*height: 111px;*/
 	border-bottom: 1px solid #aaa;
 	border-top: 1px solid #aaa;
 	margin: 0px auto;
